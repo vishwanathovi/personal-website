@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { SiteFooter } from './components/layout/SiteFooter'
 import { MobileNav, SiteHeader } from './components/layout/SiteHeader'
 import { Blog } from './components/sections/Blog'
@@ -28,6 +29,7 @@ function App() {
         <FinalCTA />
       </main>
       <SiteFooter />
+      <Analytics />
     </div>
   )
 }
