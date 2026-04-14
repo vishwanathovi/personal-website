@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-family-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface: #0c0a09;
+  --color-surface-elevated: #1c1917;
+  --color-ink: #fafaf9;
+  --color-ink-muted: #a8a29e;
+  --color-ink-subtle: #78716c;
+  --color-border: #292524;
+  --color-accent: #38bdf8;
+  --color-accent-soft: rgba(56, 189, 248, 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply m-0 min-h-svh bg-stone-950 font-sans text-stone-300 antialiased tracking-[0.01em];
+  }
+
+  ::selection {
+    @apply bg-sky-500/35 text-white;
+  }
+}
+
+@utility focus-ring {
+  @apply outline-none ring-2 ring-sky-500/45 ring-offset-2 ring-offset-stone-950 transition-shadow;
+}
+
+/* Subtle dot grid on dark surfaces */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgb(148 163 184 / 0.11) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Slightly brighter dots for alternate dark bands */
+.bg-dot-grid-on-white {
+  background-image: radial-gradient(circle, rgb(148 163 184 / 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Dark sections (e.g. tech stack) */
+.bg-dot-grid-dark {
+  background-image: radial-gradient(circle, rgb(148 163 184 / 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility focus-ring-dark {
+  @apply outline-none ring-2 ring-sky-500/50 ring-offset-2 ring-offset-stone-950 transition-shadow;
+}
