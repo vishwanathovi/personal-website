@@ -31,10 +31,10 @@ type HeroTrustedByProps = {
 
 export function HeroTrustedBy({ label }: HeroTrustedByProps) {
   return (
-    <div className="border-t border-stone-800 pt-4 sm:pt-5" role="group" aria-labelledby="hero-trusted-by-heading">
+    <div className="border-t border-white/[0.08] pt-4 sm:pt-5" role="group" aria-labelledby="hero-trusted-by-heading">
       <p
         id="hero-trusted-by-heading"
-        className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500"
+        className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-500/75"
       >
         {label}
       </p>

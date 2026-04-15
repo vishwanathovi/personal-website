@@ -236,16 +236,31 @@ export const education = {
     'Relevant coursework: Algorithms and Data Structures, Image Processing, Web Development.',
 } as const
 
+export type ProjectStatusBadge = {
+  variant: 'teal' | 'purple'
+  label: string
+}
+
+export type ProjectDescriptionSegment =
+  | { kind: 'text'; value: string }
+  | { kind: 'link'; value: string; href: string }
+
 export type Project = {
   id: string
   title: string
   description: string
+  /** Inline teal links in the body; omit to render `description` as plain text */
+  descriptionSegments?: ProjectDescriptionSegment[]
   tags: string[]
-  /** Prominent card styling (gold border / glow) */
-  featured?: boolean
+  status: ProjectStatusBadge
   demoUrl?: string
   githubUrl?: string
   caseStudyUrl?: string
+  /** CTA label for the case-study pill button */
+  caseStudyCta?: string
+  /** Display-only (e.g. "31.0K") when you want stats beside GitHub */
+  githubStars?: string
+  githubForks?: string
 }
 
 export const projects: Project[] = [
@@ -255,7 +270,7 @@ export const projects: Project[] = [
     description:
       'Designed and scaled annotation systems for large-scale LLM training. Built pipelines for automated and semi-automated data generation. Created workflows for reviewers, QC, and delivery pipelines.',
     tags: ['LLM', 'Annotation', 'Data pipelines', 'Delivery'],
-    featured: true,
+    status: { variant: 'purple', label: 'In production' },
   },
   {
     id: 'p2',
@@ -263,7 +278,7 @@ export const projects: Project[] = [
     description:
       'Built end-to-end NLP system: annotation pipelines, spaCy-based NER models, data ingestion and preprocessing, integrating multiple sources into structured pipelines.',
     tags: ['NLP', 'NER', 'spaCy', 'Ingestion'],
-    featured: true,
+    status: { variant: 'purple', label: 'In production' },
   },
   {
     id: 'p3',
@@ -271,6 +286,7 @@ export const projects: Project[] = [
     description:
       'Built ML-based recommendation system using AWS Personalize with measurable improvements in engagement and retention.',
     tags: ['AWS Personalize', 'Recommendations', 'ML'],
+    status: { variant: 'purple', label: 'In production' },
   },
   {
     id: 'p4',
@@ -278,6 +294,7 @@ export const projects: Project[] = [
     description:
       'Designed and delivered structured curriculum for 30+ engineers: documentation, assignments, and assessment systems covering full-stack development and backend systems.',
     tags: ['Teaching', 'Golang', 'React', 'Curriculum'],
+    status: { variant: 'teal', label: 'Private · On request' },
   },
   {
     id: 'p5',
@@ -285,6 +302,7 @@ export const projects: Project[] = [
     description:
       'Python pipeline that batch-processes folders of video: FFmpeg to MP3, AssemblyAI transcription, and Claude-generated summaries—with idempotent outputs per video and structured error handling.',
     tags: ['Python', 'AssemblyAI', 'Claude', 'FFmpeg'],
+    status: { variant: 'teal', label: 'Open source' },
   },
   {
     id: 'p6',
@@ -292,13 +310,26 @@ export const projects: Project[] = [
     description:
       'Workspace and documentation for a delivery pipeline: canonical repo and runbooks live under marscode-delivery (README overview + post_processing runbook) for repeatable handoffs.',
     tags: ['Delivery', 'Pipeline', 'Documentation'],
+    status: { variant: 'teal', label: 'Private · On request' },
   },
   {
     id: 'p7',
     title: 'MaskOn',
     description:
       'End-to-end mask vs. no-mask CV workflow: Keras/TensorFlow training and export to TensorFlow.js, React + Vite + MUI client, Express API, and face-api.js for in-browser face localization and inference.',
+    descriptionSegments: [
+      { kind: 'text', value: 'End-to-end mask vs. no-mask CV: ' },
+      { kind: 'link', value: 'Keras/TensorFlow', href: 'https://www.tensorflow.org/' },
+      { kind: 'text', value: ' training and export to ' },
+      { kind: 'link', value: 'TensorFlow.js', href: 'https://www.tensorflow.org/js' },
+      {
+        kind: 'text',
+        value:
+          ', React + Vite + MUI client, Express API, and face-api.js for in-browser face localization and inference.',
+      },
+    ],
     tags: ['TensorFlow', 'React', 'Computer vision', 'TF.js'],
+    status: { variant: 'teal', label: 'Open source' },
     githubUrl: 'https://github.com/vishwanathovi/maskOn',
   },
   {
@@ -306,7 +337,17 @@ export const projects: Project[] = [
     title: 'PG_Agent',
     description:
       'Agentic LangGraph system for competitive-programming-style packs: problem statements, solutions, test cases, sandboxed runs, and critique/retry loops—plus standalone workflows for novel problems, brute-force builds, test generation, and validation.',
+    descriptionSegments: [
+      { kind: 'text', value: 'Agentic ' },
+      { kind: 'link', value: 'LangGraph', href: 'https://langchain-ai.github.io/langgraph/' },
+      {
+        kind: 'text',
+        value:
+          ' system for competitive-programming-style packs: problem statements, solutions, test cases, sandboxed runs, and critique/retry loops.',
+      },
+    ],
     tags: ['LangGraph', 'LangChain', 'OpenAI', 'Anthropic'],
+    status: { variant: 'teal', label: 'Open source' },
   },
   {
     id: 'p9',
@@ -314,6 +355,7 @@ export const projects: Project[] = [
     description:
       'VS Code extension that records accepted GitHub Copilot (or similar) completions into structured JSONL logs—session controls, validation filters, edit-distance metrics, and feedback hooks for evaluation and labeling programs.',
     tags: ['TypeScript', 'VS Code', 'Copilot', 'Evaluation'],
+    status: { variant: 'teal', label: 'Open source' },
   },
 ]
 

@@ -27,8 +27,8 @@ function TechStackCard({
 }) {
   return (
     <Reveal delayMs={delayMs}>
-      <div className="h-full rounded-xl border border-stone-700/70 bg-stone-900/50 p-5 shadow-sm backdrop-blur-sm sm:p-6">
-        <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-400/95 sm:text-xs">
+      <div className="h-full rounded-2xl border border-white/10 bg-[#161616] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] sm:p-6">
+        <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-400/95 sm:text-xs">
           {title}
         </h3>
         <ul
@@ -39,7 +39,7 @@ function TechStackCard({
         >
           {items.map((item) => (
             <li key={item.name} className="flex items-center gap-2.5">
-              <SkillGlyph item={item} />
+              <SkillGlyph item={item} className="text-teal-400/90" />
               <span className="leading-snug">{item.name}</span>
             </li>
           ))}
@@ -54,13 +54,13 @@ function PeopleSkillsPanel({ card, delayMs }: { card: ExpertiseStackCard; delayM
   return (
     <Reveal delayMs={delayMs}>
       <div>
-        <h3 className="border-b border-indigo-500/25 pb-2 font-display text-base font-semibold tracking-tight text-stone-100">
+        <h3 className="border-b border-white/[0.08] pb-2 font-display text-base font-semibold tracking-tight text-stone-100">
           {card.title}
         </h3>
         <ul className="mt-4 space-y-3">
           {card.items.map((item) => (
             <li key={item.name} className="flex items-start gap-3">
-              <SkillGlyph item={item} className="mt-0.5 text-indigo-300/90" />
+              <SkillGlyph item={item} className="mt-0.5 text-teal-400/85" />
               <span className="text-sm leading-snug text-stone-400">{item.name}</span>
             </li>
           ))}
@@ -83,106 +83,106 @@ export function Expertise() {
     <section
       id="expertise"
       aria-labelledby="expertise-heading"
-      className="border-b border-stone-800/90 bg-stone-950 py-16 sm:py-20 lg:py-24 [&::selection]:bg-sky-500/35 [&::selection]:text-white"
+      className="relative overflow-hidden border-b border-stone-800/90 bg-[#0a0a0a] py-16 sm:py-20 lg:py-24 [&::selection]:bg-teal-500/30 [&::selection]:text-white"
     >
-      <div className="bg-dot-grid-dark">
-        <Container>
-          <SectionHeading
-            eyebrow={expertiseSection.eyebrow}
-            title={expertiseSection.title}
-            subtitle={expertiseSection.subtitle}
-            titleId="expertise-heading"
-          />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-dot-grid opacity-70" aria-hidden />
 
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-start">
-            {/* Mobile: tech first; desktop: people left, tech right */}
-            <aside
-              className="order-2 lg:order-1 lg:col-span-4 lg:self-start"
-              aria-label="Soft skills and languages"
-            >
-              <div className="rounded-2xl border border-indigo-500/20 bg-gradient-to-b from-indigo-950/35 via-stone-900/40 to-stone-950/60 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:p-7 lg:sticky lg:top-28">
-                <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-indigo-400/90">
-                  People & communication
-                </p>
-                <div className="mt-8 space-y-10">
-                  <PeopleSkillsPanel card={softSkillsCard} delayMs={rowA.length * 50 + rowB.length * 50} />
-                  <PeopleSkillsPanel
-                    card={spokenLanguagesCard}
-                    delayMs={rowA.length * 50 + rowB.length * 50 + 60}
-                  />
-                </div>
-              </div>
-            </aside>
+      <Container className="relative z-10">
+        <SectionHeading
+          eyebrow={expertiseSection.eyebrow}
+          title={expertiseSection.title}
+          subtitle={expertiseSection.subtitle}
+          titleId="expertise-heading"
+        />
 
-            <div className="order-1 space-y-5 lg:order-2 lg:col-span-8" aria-label="Technical stack">
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {rowA.map((card, i) => (
-                  <TechStackCard
-                    key={card.title}
-                    title={card.title}
-                    items={card.items}
-                    twoColumn={card.twoColumn}
-                    delayMs={techDelays[i]!}
-                  />
-                ))}
-              </div>
-              <div className="grid gap-5 sm:grid-cols-2">
-                {rowB.map((card, i) => (
-                  <TechStackCard
-                    key={card.title}
-                    title={card.title}
-                    items={card.items}
-                    twoColumn={card.twoColumn}
-                    delayMs={rowBDelay + i * 50}
-                  />
-                ))}
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-start">
+          {/* Mobile: tech first; desktop: people left, tech right */}
+          <aside
+            className="order-2 lg:order-1 lg:col-span-4 lg:self-start"
+            aria-label="Soft skills and languages"
+          >
+            <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] ring-1 ring-violet-500/10 sm:p-7 lg:sticky lg:top-28">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-violet-300/90">
+                People & communication
+              </p>
+              <div className="mt-8 space-y-10">
+                <PeopleSkillsPanel card={softSkillsCard} delayMs={rowA.length * 50 + rowB.length * 50} />
+                <PeopleSkillsPanel
+                  card={spokenLanguagesCard}
+                  delayMs={rowA.length * 50 + rowB.length * 50 + 60}
+                />
               </div>
             </div>
+          </aside>
+
+          <div className="order-1 space-y-5 lg:order-2 lg:col-span-8" aria-label="Technical stack">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {rowA.map((card, i) => (
+                <TechStackCard
+                  key={card.title}
+                  title={card.title}
+                  items={card.items}
+                  twoColumn={card.twoColumn}
+                  delayMs={techDelays[i]!}
+                />
+              ))}
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {rowB.map((card, i) => (
+                <TechStackCard
+                  key={card.title}
+                  title={card.title}
+                  items={card.items}
+                  twoColumn={card.twoColumn}
+                  delayMs={rowBDelay + i * 50}
+                />
+              ))}
+            </div>
           </div>
+        </div>
 
-          <div
-            className={cn(
-              'mt-14 grid gap-8',
-              certifications.length > 0 ? 'lg:grid-cols-2' : '',
-            )}
-          >
-            {certifications.length > 0 ? (
-              <Reveal delayMs={120}>
-                <div className="rounded-xl border border-stone-700/70 bg-stone-900/40 p-6 sm:p-8">
-                  <h3 className="font-display text-lg font-semibold text-stone-50">Certifications</h3>
-                  <ul className="mt-5 space-y-4">
-                    {certifications.map((c) => (
-                      <li
-                        key={c.name}
-                        className="flex flex-col gap-0.5 border-b border-stone-700/80 pb-4 last:border-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
-                      >
-                        <span className="font-medium text-stone-100">{c.name}</span>
-                        <span className="shrink-0 text-sm text-stone-400">
-                          {c.issuer ? `${c.issuer} · ` : ''}
-                          {c.year}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ) : null}
-
-            <Reveal delayMs={certifications.length > 0 ? 160 : 120}>
-              <div className="rounded-xl border border-sky-900/50 bg-gradient-to-br from-sky-950/40 to-stone-900/60 p-6 sm:p-8">
-                <h3 className="font-display text-lg font-semibold text-stone-50">Education</h3>
-                <p className="mt-3 font-display text-xl font-semibold text-sky-200/95">
-                  {'specialization' in education && education.specialization
-                    ? `${education.degree}, ${education.specialization}`
-                    : education.degree}
-                </p>
-                <p className="mt-1 text-sm font-medium text-stone-400">{education.university}</p>
-                <p className="mt-4 text-sm leading-relaxed text-stone-400">{education.details}</p>
+        <div
+          className={cn(
+            'mt-14 grid gap-8',
+            certifications.length > 0 ? 'lg:grid-cols-2' : '',
+          )}
+        >
+          {certifications.length > 0 ? (
+            <Reveal delayMs={120}>
+              <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] sm:p-8">
+                <h3 className="font-display text-lg font-semibold text-stone-50">Certifications</h3>
+                <ul className="mt-5 space-y-4">
+                  {certifications.map((c) => (
+                    <li
+                      key={c.name}
+                      className="flex flex-col gap-0.5 border-b border-white/[0.06] pb-4 last:border-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+                    >
+                      <span className="font-medium text-stone-100">{c.name}</span>
+                      <span className="shrink-0 text-sm text-stone-400">
+                        {c.issuer ? `${c.issuer} · ` : ''}
+                        {c.year}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
-          </div>
-        </Container>
-      </div>
+          ) : null}
+
+          <Reveal delayMs={certifications.length > 0 ? 160 : 120}>
+            <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] ring-1 ring-teal-500/10 sm:p-8">
+              <h3 className="font-display text-lg font-semibold text-stone-50">Education</h3>
+              <p className="mt-3 font-display text-xl font-semibold text-teal-200/95">
+                {'specialization' in education && education.specialization
+                  ? `${education.degree}, ${education.specialization}`
+                  : education.degree}
+              </p>
+              <p className="mt-1 text-sm font-medium text-stone-400">{education.university}</p>
+              <p className="mt-4 text-sm leading-relaxed text-stone-400">{education.details}</p>
+            </div>
+          </Reveal>
+        </div>
+      </Container>
     </section>
   )
 }

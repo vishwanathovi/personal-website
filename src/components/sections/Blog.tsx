@@ -8,9 +8,10 @@ export function Blog() {
     <section
       id="writing"
       aria-labelledby="writing-heading"
-      className="relative overflow-hidden border-b border-stone-800/90 bg-stone-950 py-16 sm:py-20 lg:py-24 [&::selection]:bg-sky-500/35 [&::selection]:text-white"
+      className="relative overflow-hidden border-b border-stone-800/90 bg-[#0a0a0a] py-16 sm:py-20 lg:py-24 [&::selection]:bg-teal-500/30 [&::selection]:text-white"
     >
-      <div className="pointer-events-none absolute inset-0 z-0 bg-dot-grid-on-white" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-dot-grid opacity-70" aria-hidden />
+
       <Container className="relative z-10">
         <SectionHeading
           eyebrow={blogSection.eyebrow}
@@ -19,37 +20,41 @@ export function Blog() {
           titleId="writing-heading"
         />
 
-        <ul className="mx-auto grid max-w-4xl gap-6 lg:gap-8">
+        <ul className="relative z-10 mx-auto mt-12 max-w-4xl space-y-6 sm:mt-14 lg:space-y-8">
           {blogPosts.map((post, i) => (
             <li key={post.id}>
               <Reveal delayMs={i * 70}>
-                <article className="group overflow-hidden rounded-2xl border border-stone-700/80 bg-stone-900/45 backdrop-blur-sm transition-all duration-300 hover:border-stone-600 hover:bg-stone-900/70 hover:shadow-[0_20px_50px_-24px_rgba(0,0,0,0.4)]">
+                <article className="group rounded-2xl border border-white/10 bg-[#161616] shadow-[0_0_0_1px_rgba(255,255,255,0.03)_inset] transition-transform duration-300 hover:-translate-y-0.5">
                   <a
                     href={post.href}
-                    className="block p-6 text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-sky-500/40 sm:p-8 lg:p-10"
+                    className="block p-6 text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a] sm:p-7 lg:p-8"
                   >
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wider text-stone-500">
-                          <span className="text-sky-400/95">{post.category}</span>
-                          <span className="text-stone-600" aria-hidden>
-                            ·
-                          </span>
-                          <time dateTime={post.dateIso}>{post.date}</time>
-                        </div>
-                        <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-stone-50 transition-colors group-hover:text-sky-300 sm:text-2xl">
-                          {post.title}
-                        </h3>
-                        <p className="mt-3 text-base leading-relaxed text-stone-400">{post.excerpt}</p>
-                      </div>
-                      <div className="shrink-0 sm:pt-1">
-                        <span className="inline-flex items-center text-sm font-semibold text-sky-400 transition-transform duration-300 group-hover:translate-x-0.5">
-                          Reach out
-                          <span className="ml-1" aria-hidden>
-                            →
-                          </span>
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <span className="rounded-full border border-teal-500/35 bg-teal-950/45 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-teal-300/95">
+                        {post.category}
+                      </span>
+                      <time
+                        className="text-xs font-medium text-stone-500"
+                        dateTime={post.dateIso}
+                      >
+                        {post.date}
+                      </time>
+                    </div>
+
+                    <h3 className="mt-4 font-display text-lg font-bold tracking-tight text-stone-50 transition-colors group-hover:text-teal-200 sm:text-xl">
+                      {post.title}
+                    </h3>
+                    <p className="mt-3 text-[0.875rem] leading-relaxed text-stone-400 sm:text-[15px]">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-5 flex items-center justify-between gap-4 border-t border-white/[0.06] pt-4">
+                      <span className="text-sm font-semibold text-teal-400 transition-colors group-hover:text-teal-300">
+                        Reach out
+                        <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden>
+                          →
                         </span>
-                      </div>
+                      </span>
                     </div>
                   </a>
                 </article>
