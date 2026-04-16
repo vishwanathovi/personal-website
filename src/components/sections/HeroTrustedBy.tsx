@@ -1,3 +1,5 @@
+import { cn } from '../../lib/cn'
+
 /**
  * Brand marks: path data derived from Simple Icons (CC0-1.0), rendered in neutral tone.
  * https://github.com/simple-icons/simple-icons
@@ -27,18 +29,23 @@ const CLIENTS = [
 
 type HeroTrustedByProps = {
   label: string
+  className?: string
 }
 
-export function HeroTrustedBy({ label }: HeroTrustedByProps) {
+export function HeroTrustedBy({ label, className }: HeroTrustedByProps) {
   return (
-    <div className="border-t border-white/[0.08] pt-4 sm:pt-5" role="group" aria-labelledby="hero-trusted-by-heading">
+    <div
+      className={cn('border-t border-white/[0.08] pt-3 sm:pt-4 lg:pt-3', className)}
+      role="group"
+      aria-labelledby="hero-trusted-by-heading"
+    >
       <p
         id="hero-trusted-by-heading"
-        className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-500/75"
+        className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-500/75 sm:mb-2.5 lg:mb-2"
       >
         {label}
       </p>
-      <ul className="flex flex-wrap items-start gap-x-6 gap-y-5 sm:gap-x-8 sm:gap-y-6">
+      <ul className="flex flex-wrap items-start gap-x-5 gap-y-4 sm:gap-x-7 sm:gap-y-5 lg:gap-x-6 lg:gap-y-4">
         {CLIENTS.map(({ name, path }) => (
           <li key={name} className="flex w-[4.5rem] flex-col items-center gap-1.5 text-center sm:w-[5.25rem]">
             <svg

@@ -16,8 +16,8 @@ export const site = {
   availabilityNote: 'Currently open to consulting engagements ($100–200/hr).',
   location: 'India',
   totalExperience: '10+ years',
-  /** Served from `public/My Photo - Cropped.jpg` */
-  profileImage: '/My%20Photo%20-%20Cropped.jpg',
+  /** Served from `public/vishwa-headshot.PNG` */
+  profileImage: '/vishwa-headshot.PNG',
   profileImageAlt: 'Vishwanatha HM — professional portrait',
   primaryCta: { label: 'View projects', href: '#projects' },
   secondaryCta: { label: 'Get in touch', href: '#connect' },
