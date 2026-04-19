@@ -23,7 +23,7 @@ export function Hero() {
       <Container className="relative z-10">
         <div className="flex flex-col gap-3 sm:gap-4 lg:gap-4">
           <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-10 lg:gap-y-6">
-            <div className="order-2 flex min-w-0 flex-col lg:order-1">
+            <div className="flex min-w-0 flex-col">
               <Reveal showImmediately>
                 <h1
                   id="hero-heading"
@@ -79,7 +79,7 @@ export function Hero() {
               </Reveal>
             </div>
 
-            <div className="order-1 flex w-full justify-center self-start shrink-0 lg:order-2 lg:w-auto lg:justify-start">
+            <div className="flex w-full justify-center self-start shrink-0 lg:w-auto lg:justify-start">
               <Reveal className="w-full max-w-[14.4rem] sm:max-w-64 lg:max-w-none" showImmediately>
                 <div className="relative mx-auto aspect-square w-full max-w-[14.4rem] sm:max-w-64 lg:mx-0 lg:w-80 lg:max-w-none lg:shrink-0 xl:w-[22rem]">
                   <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#161616]">
