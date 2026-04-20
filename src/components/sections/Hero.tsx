@@ -8,7 +8,7 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden border-b border-stone-800/90 bg-[#0a0a0a] pb-12 pt-8 sm:pb-16 sm:pt-11 lg:pb-14 lg:pt-12 [&::selection]:bg-teal-500/30 [&::selection]:text-white"
+      className="relative overflow-hidden border-b border-stone-800/90 bg-[#0a0a0a] pb-12 pt-12 sm:pb-16 sm:pt-12 lg:pb-14 lg:pt-14 [&::selection]:bg-teal-500/30 [&::selection]:text-white"
     >
       <div className="pointer-events-none absolute inset-0 z-0 bg-dot-grid opacity-70" aria-hidden />
       <div

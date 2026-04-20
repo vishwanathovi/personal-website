@@ -17,6 +17,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Sticky SiteHeader: h-16 (4rem) default, sm:h-[4.25rem] from sm — keeps #top / in-page anchors clear of the bar */
+    scroll-padding-top: 4rem;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 4.25rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
