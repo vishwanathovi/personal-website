@@ -1,24 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0c0a09" />
-  <meta name="description"
-    content="Vishwanatha HM — LLM evaluation and AI delivery consultant. Ten+ years in ML, data engineering, and product; annotation platforms, NLP, and evaluation pipelines." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Space+Grotesk:wght@300..700&display=swap"
-    rel="stylesheet" />
-  <title>Vishwanatha HM — LLM Evaluation & AI Delivery · Portfolio</title>
-</head>
+    <!-- LCP Image Preload -->
+    <link rel="preload" href="/vishwa-headshot.PNG" as="image" fetchpriority="high" />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <!-- Font Preloads (self-hosted) -->
+    <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
 
+    <!-- Primary Meta -->
+    <title>Vishwanatha HM — AI Technology Leader</title>
+    <meta name="title" content="Vishwanatha HM — AI Technology Leader" />
+    <meta name="description" content="AI Technology Leader with 10+ years shipping ML and AI systems. I help companies adopt AI — from LLM pipelines to production delivery. Open to consulting ($100–200/hr)." />
+    <meta name="author" content="Vishwanatha HM" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vishwanatha HM — AI Technology Leader" />
+    <meta property="og:description" content="10+ years in ML and AI. Helping companies adopt AI — strategy to production. Currently leading 30+ engineers building AI infrastructure at Turing." />
+    <meta property="og:image" content="/vishwa-headshot.PNG" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vishwanatha HM — AI Technology Leader" />
+    <meta name="twitter:description" content="10+ years in ML and AI. Helping companies adopt AI — strategy to production." />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Theme detection before first paint (eliminates dark→light flash) -->
+    <script>
+      (function(){var s=localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme:dark)').matches;var h=document.documentElement;h.classList.toggle('dark',d);h.classList.toggle('light',!d);var m=document.querySelector('meta[name="color-scheme"]');if(m)m.content=d?'dark':'light';var t=document.querySelector('meta[name="theme-color"]');if(t)t.content=d?'#0a0a0a':'#f4f3f1'})()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

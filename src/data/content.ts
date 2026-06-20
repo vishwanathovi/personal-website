@@ -5,21 +5,20 @@
 
 export const site = {
   name: 'Vishwanatha HM',
-  title: 'LLM Evaluation & AI Delivery Systems Consultant',
-  bio: 'With 10+ years across machine learning, data engineering, and product, I specialize in turning experimental AI workflows into structured, production-ready systems.',
+  title: 'AI Technology Leader',
+  bio: '10+ years shipping ML and AI systems. I help companies adopt AI — strategy to production.',
   heroHighlights: [
-    'Built LLM training data infrastructure for large-scale AI systems',
-    'Led teams of 30+ engineers across ML and data platforms',
-    'Designed NLP systems, recommendation engines, and evaluation pipelines',
-    'Shipped agentic and evaluation tooling: LangGraph problem packs, Copilot completion capture in VS Code, and browser-based CV demos',
+    'Leading 30+ engineers building AI infrastructure at Turing',
+    'Shipped NLP systems, LLM pipelines, and recommendation engines at scale',
+    'Available for consulting: AI adoption, evaluation, delivery',
   ],
-  availabilityNote: 'Currently open to consulting engagements ($100–200/hr).',
+  availabilityNote: 'Open to consulting engagements ($100–200/hr)',
   location: 'India',
   totalExperience: '10+ years',
   /** Served from `public/vishwa-headshot.PNG` */
   profileImage: '/vishwa-headshot.PNG',
   profileImageAlt: 'Vishwanatha HM — professional portrait',
-  primaryCta: { label: 'View projects', href: '#projects' },
+  primaryCta: { label: 'See my work', href: '#projects' },
   secondaryCta: { label: 'Get in touch', href: '#connect' },
   /** Shown above primary CTAs with brand marks */
   heroTrustedByLabel: "Clients I've worked with",
@@ -46,34 +45,34 @@ export type TimelineEntry = {
 }
 
 export const careerSection = {
-  eyebrow: 'Work experience',
-  title: 'From analytics and product to ML platforms and LLM data',
+  eyebrow: 'Experience',
+  title: 'From data to LLMs — building AI that ships',
   subtitle:
-    'End-to-end ownership across discovery → prioritization → delivery, from decision science and recommendations through NLP, annotation platforms, and generative-AI pipelines—with teams up to 30+ engineers.',
+    '10+ years turning ML ideas into production systems. End-to-end ownership across strategy, team-building, and delivery.',
 } as const
 
 export const timeline: TimelineEntry[] = [
   {
     id: '1',
-    role: 'Engineering Manager',
+    role: 'Engineering Manager · AI Infrastructure',
     company: 'Turing',
     duration: 'Dec 2022 — Present',
     bullets: [
-      'Built and scaled LLM training data annotation platforms for a leading US AI company',
-      'Designed automated and semi-automated pipelines for generative AI data creation',
-      'Led and structured a team of 30+ engineers across delivery, tooling, and operations',
-      'Focus areas: LLM data pipelines, evaluation systems, workflow automation',
+      'Technology leader for AI infrastructure at a leading US AI company',
+      'Built and scaled LLM training data platforms from the ground up',
+      'Grew and led a team of 30+ engineers across delivery, tooling, and operations',
+      'Drove AI adoption: automated and human-in-the-loop pipelines for LLM data and evaluation',
     ],
   },
   {
     id: '2',
     role: 'SDE 3 — Machine Learning',
-    company: 'Purple',
+    company: 'Purplle',
     duration: 'Apr 2021 — Aug 2022',
     bullets: [
-      'Built a complete NLP platform covering annotation, data cleanup, model training, and inference',
-      'Designed robust data ingestion pipelines for external data sources',
-      'Worked on search-query understanding, NER systems, and tagging pipelines',
+      'Brought NLP to production for a 7M-user e-commerce platform',
+      'Built end-to-end: annotation, model training, search understanding, and NER pipelines',
+      'Designed data ingestion systems connecting multiple external sources',
     ],
   },
   {
@@ -82,22 +81,20 @@ export const timeline: TimelineEntry[] = [
     company: 'Kiwi',
     duration: 'Sep 2019 — Jun 2020',
     bullets: [
-      'Built recommendation engine using AWS Personalize',
-      'Increased engagement by 20%',
-      'Improved retention by 30%',
-      'Designed push notification system to optimize user engagement',
+      'Deployed ML recommendation engine (AWS Personalize) to production',
+      '+20% engagement and +30% retention after rollout',
+      'Built push notification system to optimize user re-engagement',
     ],
   },
   {
     id: '4',
-    role: 'Sabbatical — Learner',
+    role: 'Sabbatical — Builder',
     company: 'Independent',
     duration: 'May 2018 — Jun 2019',
     bullets: [
-      'Completed full-stack bootcamp (MERN stack)',
-      'Built full-scale applications using React and Node.js',
-      'Self-studied software engineering and data science',
-      'Focused on systems thinking and building from scratch',
+      'Learned full-stack engineering from scratch (MERN stack)',
+      'Built and shipped full-scale React and Node.js applications',
+      'Focused on systems thinking and building end-to-end products',
     ],
   },
   {
@@ -106,9 +103,9 @@ export const timeline: TimelineEntry[] = [
     company: 'SigTuple',
     duration: 'Feb 2017 — Feb 2018',
     bullets: [
-      'Worked on AI-based retinal diagnosis product (Drishti)',
-      'Collaborated across design, engineering, and data science teams',
-      'Managed product roadmap, sprints, and stakeholder communication',
+      'Product lead for Drishti — AI-based retinal diagnosis system',
+      'Worked across design, engineering, and data science to ship clinical AI',
+      'Managed roadmap, sprints, and stakeholder communication',
     ],
   },
   {
@@ -117,8 +114,8 @@ export const timeline: TimelineEntry[] = [
     company: 'Flipkart',
     duration: 'Aug 2015 — Jun 2016',
     bullets: [
-      'Built KNN-based clustering for seller segmentation',
-      'Designed data pipelines for business analytics and experimentation',
+      'Built KNN clustering for seller segmentation',
+      'Designed data pipelines for analytics and experimentation',
     ],
   },
   {
@@ -128,7 +125,7 @@ export const timeline: TimelineEntry[] = [
     duration: 'Jun 2013 — Jun 2015',
     bullets: [
       'Built marketing optimization models for US pharma clients',
-      'Generated insights from large multi-source datasets',
+      'Derived insights from large, multi-source datasets',
     ],
   },
 ]
@@ -202,12 +199,12 @@ export const techStackCards: ExpertiseStackCard[] = [
 ]
 
 export const softSkillsCard: ExpertiseStackCard = {
-  title: 'Soft skills',
+  title: 'How I work',
   items: [
-    { name: 'Cross-functional leadership', icon: 'handshake' },
-    { name: 'Stakeholder communication', icon: 'chatbot' },
+    { name: 'Technology leadership', icon: 'handshake' },
+    { name: 'Cross-functional delivery', icon: 'chatbot' },
     { name: 'Roadmapping & prioritization', icon: 'linear' },
-    { name: 'Mentoring & documentation', icon: 'readthedocs' },
+    { name: 'Team building & mentoring', icon: 'readthedocs' },
     { name: 'Operating with ambiguity', icon: 'target' },
   ],
 }
@@ -266,57 +263,74 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'p1',
-    title: 'LLM Training Data Platform',
+    title: 'AI Infrastructure at Scale — Turing',
     description:
-      'Designed and scaled annotation systems for large-scale LLM training. Built pipelines for automated and semi-automated data generation. Created workflows for reviewers, QC, and delivery pipelines.',
-    tags: ['LLM', 'Annotation', 'Data pipelines', 'Delivery'],
+      'Technology leader for a US AI lab. Built LLM training data platforms, scaled a team of 30+ engineers, and shipped human-in-the-loop and automated pipelines for data generation, evaluation, and delivery.',
+    tags: ['LLM', 'AI Adoption', 'Team Leadership', 'Pipelines'],
     status: { variant: 'purple', label: 'In production' },
   },
   {
     id: 'p2',
-    title: 'NLP Platform (Purplle)',
+    title: 'NLP Adoption — Purplle',
     description:
-      'Built end-to-end NLP system: annotation pipelines, spaCy-based NER models, data ingestion and preprocessing, integrating multiple sources into structured pipelines.',
-    tags: ['NLP', 'NER', 'spaCy', 'Ingestion'],
+      'Brought NLP to production for a 7M-user e-commerce platform. End-to-end: annotation, spaCy NER models, search understanding, and data ingestion pipelines from scratch.',
+    tags: ['NLP', 'NER', 'spaCy', 'E-commerce AI'],
     status: { variant: 'purple', label: 'In production' },
   },
   {
     id: 'p3',
-    title: 'Recommendation Engine (Kiwi)',
+    title: 'ML Recommendations — Kiwi',
     description:
-      'Built ML-based recommendation system using AWS Personalize with measurable improvements in engagement and retention.',
-    tags: ['AWS Personalize', 'Recommendations', 'ML'],
+      'Deployed recommendation engine with AWS Personalize. Measurable impact: +20% engagement, +30% retention. Also built push notification system to close the re-engagement loop.',
+    tags: ['AWS Personalize', 'Recommendations', 'Retention'],
     status: { variant: 'purple', label: 'In production' },
   },
   {
     id: 'p4',
-    title: 'Golang + React Bootcamp Platform',
+    title: 'AI Adoption Bootcamp',
     description:
-      'Designed and delivered structured curriculum for 30+ engineers: documentation, assignments, and assessment systems covering full-stack development and backend systems.',
-    tags: ['Teaching', 'Golang', 'React', 'Curriculum'],
+      'Designed and delivered a structured curriculum for 30+ engineers: full-stack + AI systems, documentation, hands-on assignments, and assessment frameworks.',
+    tags: ['AI Enablement', 'Curriculum', 'Golang', 'React'],
     status: { variant: 'teal', label: 'Private · On request' },
   },
   {
     id: 'p5',
-    title: 'Video Processing System',
+    title: 'PG_Agent',
     description:
-      'Python pipeline that batch-processes folders of video: FFmpeg to MP3, AssemblyAI transcription, and Claude-generated summaries—with idempotent outputs per video and structured error handling.',
-    tags: ['Python', 'AssemblyAI', 'Claude', 'FFmpeg'],
+      'Agentic LangGraph system for generating competitive-programming problem packs. Handles problem statements, solutions, test cases, sandboxed runs, and critique/retry loops autonomously.',
+    descriptionSegments: [
+      { kind: 'text', value: 'Agentic ' },
+      { kind: 'link', value: 'LangGraph', href: 'https://langchain-ai.github.io/langgraph/' },
+      {
+        kind: 'text',
+        value:
+          ' system for competitive-programming-style packs: problem statements, solutions, test cases, sandboxed runs, and critique/retry loops.',
+      },
+    ],
+    tags: ['LangGraph', 'Agents', 'OpenAI', 'Anthropic'],
     status: { variant: 'teal', label: 'Open source' },
   },
   {
     id: 'p6',
-    title: 'Marscode delivery & post-processing',
+    title: 'Tab Capture',
     description:
-      'Workspace and documentation for a delivery pipeline: canonical repo and runbooks live under marscode-delivery (README overview + post_processing runbook) for repeatable handoffs.',
-    tags: ['Delivery', 'Pipeline', 'Documentation'],
-    status: { variant: 'teal', label: 'Private · On request' },
+      'VS Code extension that captures accepted AI completions (GitHub Copilot, etc.) into structured JSONL logs — with session controls, edit-distance metrics, and feedback hooks for evaluation programs.',
+    tags: ['TypeScript', 'VS Code', 'AI Evaluation', 'Copilot'],
+    status: { variant: 'teal', label: 'Open source' },
   },
   {
     id: 'p7',
+    title: 'Video Processing Pipeline',
+    description:
+      'Python pipeline: batch-processes videos via FFmpeg → AssemblyAI transcription → Claude-generated summaries. Idempotent per video with structured error handling.',
+    tags: ['Python', 'AssemblyAI', 'Claude', 'Automation'],
+    status: { variant: 'teal', label: 'Open source' },
+  },
+  {
+    id: 'p8',
     title: 'MaskOn',
     description:
-      'End-to-end mask vs. no-mask CV workflow: Keras/TensorFlow training and export to TensorFlow.js, React + Vite + MUI client, Express API, and face-api.js for in-browser face localization and inference.',
+      'End-to-end CV demo: Keras/TensorFlow training exported to TF.js, React + MUI client, Express API, and face-api.js for in-browser face detection and inference.',
     descriptionSegments: [
       { kind: 'text', value: 'End-to-end mask vs. no-mask CV: ' },
       { kind: 'link', value: 'Keras/TensorFlow', href: 'https://www.tensorflow.org/' },
@@ -328,42 +342,17 @@ export const projects: Project[] = [
           ', React + Vite + MUI client, Express API, and face-api.js for in-browser face localization and inference.',
       },
     ],
-    tags: ['TensorFlow', 'React', 'Computer vision', 'TF.js'],
+    tags: ['TensorFlow', 'React', 'Computer Vision', 'TF.js'],
     status: { variant: 'teal', label: 'Open source' },
     githubUrl: 'https://github.com/vishwanathovi/maskOn',
-  },
-  {
-    id: 'p8',
-    title: 'PG_Agent',
-    description:
-      'Agentic LangGraph system for competitive-programming-style packs: problem statements, solutions, test cases, sandboxed runs, and critique/retry loops—plus standalone workflows for novel problems, brute-force builds, test generation, and validation.',
-    descriptionSegments: [
-      { kind: 'text', value: 'Agentic ' },
-      { kind: 'link', value: 'LangGraph', href: 'https://langchain-ai.github.io/langgraph/' },
-      {
-        kind: 'text',
-        value:
-          ' system for competitive-programming-style packs: problem statements, solutions, test cases, sandboxed runs, and critique/retry loops.',
-      },
-    ],
-    tags: ['LangGraph', 'LangChain', 'OpenAI', 'Anthropic'],
-    status: { variant: 'teal', label: 'Open source' },
-  },
-  {
-    id: 'p9',
-    title: 'Tab Capture',
-    description:
-      'VS Code extension that records accepted GitHub Copilot (or similar) completions into structured JSONL logs—session controls, validation filters, edit-distance metrics, and feedback hooks for evaluation and labeling programs.',
-    tags: ['TypeScript', 'VS Code', 'Copilot', 'Evaluation'],
-    status: { variant: 'teal', label: 'Open source' },
   },
 ]
 
 export const projectsSection = {
-  eyebrow: 'Projects',
-  title: "What I've built",
+  eyebrow: 'Work',
+  title: 'AI in production',
   subtitle:
-    'Professional highlights plus side projects: LLM data and NLP platforms, recommendations, LangGraph agents, video→transcript pipelines, IDE evaluation tooling, and CV demos.',
+    'Real systems shipped: LLM infrastructure, NLP platforms, recommendation engines, agentic tools, and AI evaluation tooling.',
 } as const
 
 export type BlogPost = {
@@ -377,17 +366,16 @@ export type BlogPost = {
 }
 
 export const blogSection = {
-  eyebrow: 'Sharing',
-  title: 'Writing',
-  subtitle:
-    'Drafts in progress—LLM evaluation, human-in-the-loop workflows, and shipping AI reliably.',
+  eyebrow: 'Writing',
+  title: 'On AI adoption',
+  subtitle: 'Drafts in progress — LLM evaluation, human-in-the-loop workflows, and shipping AI reliably.',
 } as const
 
 export const blogPosts: BlogPost[] = [
   {
     id: 'b1',
-    title: 'Designing LLM Evaluation Systems',
-    excerpt: 'Frameworks and practices for making model quality measurable and actionable.',
+    title: 'How to evaluate LLMs before shipping',
+    excerpt: 'Frameworks for making model quality measurable — before it reaches your users.',
     date: 'Planned',
     dateIso: '2026-12-31',
     category: 'Topics',
@@ -395,8 +383,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'b2',
-    title: 'Building Human-in-the-Loop AI Workflows',
-    excerpt: 'Structuring annotation, review, and feedback so production teams can move fast without losing control.',
+    title: 'Human-in-the-loop: when to trust the model',
+    excerpt: 'Structuring annotation and review so teams move fast without losing control.',
     date: 'Planned',
     dateIso: '2026-12-31',
     category: 'Topics',
@@ -404,8 +392,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'b3',
-    title: 'Common Failure Modes in LLM Applications',
-    excerpt: 'Where LLM products break in the real world—and how to catch issues before users do.',
+    title: 'Where LLM products break in production',
+    excerpt: 'Common failure modes — and how to catch them before users do.',
     date: 'Planned',
     dateIso: '2026-12-31',
     category: 'Topics',
@@ -413,7 +401,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'b4',
-    title: 'How to Structure AI Delivery Pipelines',
+    title: 'Structuring an AI delivery pipeline',
     excerpt: 'From experiment to repeatable delivery: roles, gates, and operational habits.',
     date: 'Planned',
     dateIso: '2026-12-31',
@@ -422,7 +410,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'b5',
-    title: 'From ML Models to Production Systems',
+    title: 'From ML model to production system',
     excerpt: 'Closing the gap between a trained model and something your team can run and evolve.',
     date: 'Planned',
     dateIso: '2026-12-31',
@@ -433,7 +421,7 @@ export const blogPosts: BlogPost[] = [
 
 export const finalCta = {
   headline: "Let's talk",
-  body: 'Building AI systems and need evaluation, data, or delivery help? I consult on LLM quality, annotation and data pipelines, and delivery structure ($100–200/hr).',
+  body: 'Need help adopting AI in your company? I consult on AI strategy, LLM evaluation, data pipelines, and delivery ($100–200/hr).',
   buttonLabel: 'Email Vishwanatha',
   buttonHref: 'mailto:vishwanathovi@gmail.com',
 } as const
@@ -449,11 +437,10 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const footerNote =
-  'LLM evaluation & AI delivery consultant · India · Open to consulting engagements ($100–200/hr)'
+  'AI Technology Leader · India · Open to consulting ($100–200/hr)'
 
 export const expertiseSection = {
   eyebrow: 'Skills',
-  title: 'Tech stack',
-  subtitle:
-    'ML and LLM tooling, data and engineering, delivery platforms—and how I work with teams.',
+  title: 'How I build',
+  subtitle: 'ML and LLM tooling, data engineering, delivery platforms — and the leadership to ship it.',
 } as const
