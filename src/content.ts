@@ -187,10 +187,12 @@ export const PROJECTS: Project[] = [
 export type TechCategory = { name: string; items: string[] }
 
 export const TECH_CATEGORIES: TechCategory[] = [
-  { name: 'AI / LLM',    items: ['OpenAI', 'Claude', 'LangGraph', 'spaCy', 'TensorFlow'] },
-  { name: 'Data & ML',   items: ['Python', 'Pandas', 'scikit-learn', 'PostgreSQL', 'Spark'] },
-  { name: 'Engineering', items: ['Golang', 'Node.js', 'React', 'FastAPI', 'Docker', 'Java'] },
-  { name: 'Automation',  items: ['Apache Airflow', 'n8n', 'Zapier', 'Google Cloud', 'Vercel'] },
+  { name: 'AI / LLM',       items: ['OpenAI', 'Claude', 'LangGraph', 'AssemblyAI', 'spaCy', 'TensorFlow'] },
+  { name: 'LLMOps',         items: ['Evals', 'Observability'] },
+  { name: 'Data & ML',      items: ['Python', 'Pandas', 'scikit-learn', 'PostgreSQL', 'SQL', 'Spark', 'AWS Personalize'] },
+  { name: 'Engineering',    items: ['TypeScript', 'Golang', 'Node.js', 'React', 'FastAPI', 'Express', 'Java', 'Git'] },
+  { name: 'Cloud & Infra',  items: ['AWS', 'Google Cloud', 'Vercel', 'Docker'] },
+  { name: 'Automation',     items: ['Apache Airflow', 'n8n', 'Zapier'] },
 ]
 
 export const SOFT_SKILLS = [
