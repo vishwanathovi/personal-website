@@ -142,11 +142,13 @@ body.scrollytelling-theme.light-theme {
   color: var(--ink-muted);
 }
 
-.light-theme .footer-thesis p {
+.light-theme .footer-thesis p,
+.light-theme .footer-text {
   color: var(--ink);
 }
 
-.light-theme .footer-meta p {
+.light-theme .footer-meta p,
+.light-theme .footer-credit {
   color: var(--ink-light);
 }
 
@@ -4226,9 +4228,19 @@ body.light-theme .nav-theme-toggle .moon-icon {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 32px;
+}
+
+/* Legacy multi-block footer (thesis + meta + actions + bottom row) */
+.footer-inner:has(.footer-thesis) {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
+  align-items: start;
 }
 
 .footer-label {
@@ -4241,12 +4253,19 @@ body.light-theme .nav-theme-toggle .moon-icon {
   margin-bottom: 12px;
 }
 
-.footer-thesis p {
+.footer-thesis p,
+.footer-text {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.80);
+  margin: 0;
+}
+
+.footer-text {
+  flex: 1 1 220px;
+  max-width: 420px;
 }
 
 .footer-meta p {
@@ -4262,10 +4281,30 @@ body.light-theme .nav-theme-toggle .moon-icon {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.footer-credit {
+  flex: 0 0 auto;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .footer-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-top: 0;
+}
+
+.footer-inner:has(.footer-thesis) .footer-actions {
+  flex-direction: column;
   justify-content: flex-start;
   padding-top: 20px;
 }
@@ -4750,9 +4789,30 @@ body.light-theme .nav-theme-toggle .moon-icon {
 
   /* Footer */
   .footer-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
     gap: 28px;
     padding: 0 24px;
+  }
+
+  .footer-inner:has(.footer-thesis) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-text {
+    max-width: none;
+  }
+
+  .footer-credit {
+    text-align: center;
+    white-space: normal;
+  }
+
+  .footer-actions {
+    justify-content: center;
   }
 }
 
