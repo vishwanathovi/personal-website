@@ -153,9 +153,41 @@ button, a, [role="button"], summary { cursor: pointer; }
     --dot-grid: 240 5% 35% / 0.25;
   }
 
-  /* Dark mode via system preference — CSS-first, no JS needed = 0ms flash */
+  /* Dark mode default — light only when .light class is set */
+  :root:not(.light) {
+    --background: 240 6% 10%;
+    --foreground: 0 0% 93%;
+    --muted: 240 4% 14%;
+    --muted-foreground: 240 5% 65%;
+    --primary: 187 86% 53%;
+    --primary-foreground: 240 10% 4%;
+    --accent: 270 91% 78%;
+    --accent-foreground: 0 0% 100%;
+    --border: 240 4% 20%;
+    --card: 240 5% 13%;
+    --card-foreground: 0 0% 93%;
+    --gradient-from: 187 86% 53%;
+    --gradient-to: 270 91% 78%;
+    --gold: 45 97% 49%;
+    --success: 142 71% 45%;
+    --tool: 187 92% 50%;
+    --linkedin: 210 88% 71%;
+    --codeblock: 215 19% 5%;
+    --codeblock-text: 213 14% 90%;
+    --code-keyword: 210 100% 75%;
+    --code-string: 24 80% 65%;
+    --code-comment: 213 10% 55%;
+    --code-number: 30 85% 65%;
+    --code-heading: 210 100% 75%;
+    --code-var: 270 70% 75%;
+    --hero-orb-primary: 187 86% 53% / 0.08;
+    --hero-orb-accent: 270 91% 70% / 0.10;
+    --dot-grid: 240 5% 65% / 0.15;
+  }
+
+  /* Legacy: system dark preference when no explicit .dark/.light class */
   @media (prefers-color-scheme: dark) {
-    :root:not(.light) {
+    :root:not(.light):not(.dark) {
       --background: 240 6% 10%;
       --foreground: 0 0% 93%;
       --muted: 240 4% 14%;

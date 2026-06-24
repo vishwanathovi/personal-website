@@ -72,8 +72,12 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
     }
 
     document.body.classList.add('scrollytelling-theme', `page-${configId}`)
-    const stored = localStorage.getItem('scrolly-theme') || 'light'
-    document.body.classList.toggle('light-theme', stored === 'light')
+    const stored =
+      localStorage.getItem('scrolly-theme') ?? localStorage.getItem('theme') ?? 'dark'
+    const isLight = stored === 'light'
+    document.body.classList.toggle('light-theme', isLight)
+    document.documentElement.classList.toggle('dark', !isLight)
+    document.documentElement.classList.toggle('light', isLight)
 
     const theme = page.theme ?? {}
     const prev = document.body.style.cssText
@@ -100,10 +104,11 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
       const target = e.target as HTMLElement
       if (!target.closest('.theme-toggle-btn')) return
       document.body.classList.toggle('light-theme')
-      localStorage.setItem(
-        'scrolly-theme',
-        document.body.classList.contains('light-theme') ? 'light' : 'dark',
-      )
+      const mode = document.body.classList.contains('light-theme') ? 'light' : 'dark'
+      localStorage.setItem('scrolly-theme', mode)
+      localStorage.setItem('theme', mode)
+      document.documentElement.classList.toggle('dark', mode === 'dark')
+      document.documentElement.classList.toggle('light', mode === 'light')
       applyThemeVars()
     }
     document.addEventListener('click', onThemeClick)

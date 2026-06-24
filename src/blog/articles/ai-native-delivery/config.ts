@@ -174,12 +174,7 @@ export const config: ScrollyConfig = {
   ],
   footerHtml: `
     <div class="footer-inner">
-      <p class="footer-title">The Operational Advantage</p>
-      <p class="footer-text">
-        The primary advantage of an AI-native delivery system would not come from replacing a single role.
-        It would come from reducing the repeated reconstruction of organisational knowledge — making delivery
-        legible, governable, and continuously improving across projects.
-      </p>
+      <p class="footer-text">Capture reliably. Govern what ships. Let each project teach the next.</p>
       <div class="footer-actions">
         <a href="/blog" class="footer-btn primary">← Back to Writing</a>
         <a href="/#contact" class="footer-btn secondary">Get in touch</a>

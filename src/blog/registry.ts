@@ -1,8 +1,7 @@
 import type { BlogPostMeta, ScrollyArticleModule } from './types'
-import { aiAdoptionGap } from './articles/ai-adoption-gap'
 import { aiNativeDelivery } from './articles/ai-native-delivery'
 
-const articles: ScrollyArticleModule[] = [aiNativeDelivery, aiAdoptionGap]
+const articles: ScrollyArticleModule[] = [aiNativeDelivery]
 
 export const blogPosts: BlogPostMeta[] = articles
   .map((a) => a.meta)

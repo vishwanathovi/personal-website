@@ -389,6 +389,7 @@ function ThemeToggle() {
     document.documentElement.classList.toggle('dark', next)
     document.documentElement.classList.toggle('light', !next)
     localStorage.setItem('theme', next ? 'dark' : 'light')
+    localStorage.setItem('scrolly-theme', next ? 'dark' : 'light')
   }
   if (!hydrated) return null
   return (
