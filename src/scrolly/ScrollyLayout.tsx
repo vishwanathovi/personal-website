@@ -1,8 +1,8 @@
 import { useEffect, useMemo, type CSSProperties, type ReactNode } from 'react'
 import type { ScrollyConfig } from '../blog/types'
 import initScrolly from './scrolly-runtime'
-import './scrolly.css'
-import '../fonts/geist.css'
+import scrollyCssUrl from './scrolly.css?url'
+import geistCssUrl from '../fonts/geist.css?url'
 
 const NAV_ICON_SIZE = 14
 
@@ -144,6 +144,9 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
 
   return (
     <>
+      <link rel="stylesheet" href={scrollyCssUrl} precedence="default" />
+      <link rel="stylesheet" href={geistCssUrl} precedence="default" />
+
       <div id="progress-bar" />
 
       <nav id="main-nav">

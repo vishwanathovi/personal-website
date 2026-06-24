@@ -1,7 +1,11 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
 import { BlogIndex } from './pages/BlogIndex'
-import { BlogArticle } from './pages/BlogArticle'
+
+const BlogArticle = lazy(() =>
+  import('./pages/BlogArticle').then((m) => ({ default: m.BlogArticle })),
+)
 
 export function AppRouter() {
   return (
@@ -9,7 +13,14 @@ export function AppRouter() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/blog" element={<BlogIndex />} />
-        <Route path="/blog/:slug" element={<BlogArticle />} />
+        <Route
+          path="/blog/:slug"
+          element={
+            <Suspense fallback={null}>
+              <BlogArticle />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   )
