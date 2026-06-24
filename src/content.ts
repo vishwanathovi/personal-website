@@ -23,9 +23,10 @@ export const HERO = {
   photo: '/vishwa-headshot.PNG',
   photoAlt: 'Vishwanatha HM — portrait',
   ctaPrimary:   { label: 'See my work',  href: '#projects' },
+  ctaBlog:      { label: 'Read my blog', href: '/blog' },
   ctaSecondary: { label: "Let's talk",   href: '#contact' },
   pillLabels: ['AI Leader', 'ML & LLM', 'Consulting'] as const,
-  linkedIn: 'https://www.linkedin.com/in/vishwanathovi/',
+  linkedIn: 'https://www.linkedin.com/in/vishwanathhm/',
   github:   'https://github.com/vishwanathovi',
 }
 
@@ -38,6 +39,7 @@ export const ABOUT = {
   navLinks: [
     { icon: 'briefcase', label: 'My journey',  href: '#experience' },
     { icon: 'folder',    label: 'What I built', href: '#projects'   },
+    { icon: 'pen',       label: 'Writing',      href: '/blog'       },
     { icon: 'mail',      label: "Let's talk",   href: '#contact'    },
   ],
 }
@@ -209,7 +211,7 @@ export const CONTACT = {
   email:        'vishwanathovi@gmail.com',
   phoneDisplay: '+91 97439 11883',
   phoneTel:     '+919743911883',
-  linkedIn:     'https://www.linkedin.com/in/vishwanathovi/',
+  linkedIn:     'https://www.linkedin.com/in/vishwanathhm/',
   github:       'https://github.com/vishwanathovi',
   ctaTitle:     "Let's talk",
   ctaDesc:      'Need help adopting AI in your company? I consult on AI strategy, coding-tool evaluation, data pipelines, and engineering delivery.',

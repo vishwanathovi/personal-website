@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'motion/react'
 import {
   Mail, Briefcase, FolderGit2, BadgeCheck, Zap,
   List, Phone, Code2, Sun, Moon, GraduationCap,
-  Globe, ExternalLink,
+  Globe, ExternalLink, PenLine,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { getTechIcon } from './tech-icons'
 import {
   HERO, ABOUT, EXPERIENCE, PROJECTS, TECH_CATEGORIES,
@@ -523,6 +524,13 @@ export default function App() {
                   <FolderGit2 className="w-4 h-4" />
                   {HERO.ctaPrimary.label}
                 </a>
+                <Link
+                  to={HERO.ctaBlog.href}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
+                >
+                  <PenLine className="w-4 h-4" />
+                  {HERO.ctaBlog.label}
+                </Link>
                 <a
                   href={HERO.ctaSecondary.href}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
@@ -587,20 +595,20 @@ export default function App() {
 
           <AnimatedSection delay={0.1} className="mt-10 flex flex-wrap justify-center gap-3">
             {ABOUT.navLinks.map(link => {
-              const Icon = link.icon === 'briefcase' ? Briefcase : link.icon === 'folder' ? FolderGit2 : Mail
+              const Icon = link.icon === 'briefcase' ? Briefcase
+                : link.icon === 'folder' ? FolderGit2
+                : link.icon === 'pen' ? PenLine
+                : Mail
               const isHighlight = link.icon === 'mail'
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={isHighlight
-                    ? 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-theme text-white text-sm font-medium shadow-lg shadow-primary/25 hover:brightness-110 transition-all duration-200'
-                    : 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 text-sm text-foreground transition-colors duration-200'
-                  }
-                >
-                  <Icon className="w-4 h-4" />
-                  {link.label}
-                </a>
+              const isExternal = link.href.startsWith('#')
+              const className = isHighlight
+                ? 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-theme text-white text-sm font-medium shadow-lg shadow-primary/25 hover:brightness-110 transition-all duration-200'
+                : 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 text-sm text-foreground transition-colors duration-200'
+              const inner = (<><Icon className="w-4 h-4" />{link.label}</>)
+              return isExternal ? (
+                <a key={link.href} href={link.href} className={className}>{inner}</a>
+              ) : (
+                <Link key={link.href} to={link.href} className={className}>{inner}</Link>
               )
             })}
           </AnimatedSection>

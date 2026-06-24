@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="From Delivery Operations to Delivery Intelligence">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061018"/>
+      <stop offset="55%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#101A35"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    <linearGradient id="stack-muted" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1E293B" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="stack-teal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <circle cx="980" cy="120" r="220" fill="#A78BFA" opacity="0.07"/>
+  <circle cx="180" cy="560" r="260" fill="#5EEAD4" opacity="0.06"/>
+
+  <g opacity="0.12" stroke="#94A3B8" stroke-width="0.75">
+    <line x1="0" y1="84" x2="1200" y2="84"/>
+    <line x1="0" y1="168" x2="1200" y2="168"/>
+    <line x1="84" y1="0" x2="84" y2="675"/>
+    <line x1="168" y1="0" x2="168" y2="675"/>
+  </g>
+
+  <!-- Authority stack motif -->
+  <g transform="translate(720 130)">
+    <rect x="0" y="0" width="340" height="44" rx="10" fill="url(#stack-muted)" stroke="#94A3B8" stroke-opacity="0.45"/>
+    <rect x="0" y="58" width="340" height="44" rx="10" fill="#2563EB" fill-opacity="0.22" stroke="#60A5FA" stroke-opacity="0.5"/>
+    <rect x="0" y="116" width="340" height="44" rx="10" fill="#0F766E" fill-opacity="0.22" stroke="#5EEAD4" stroke-opacity="0.5"/>
+    <rect x="0" y="174" width="340" height="44" rx="10" fill="#7C3AED" fill-opacity="0.2" stroke="#A78BFA" stroke-opacity="0.5"/>
+    <rect x="0" y="232" width="340" height="44" rx="10" fill="#B45309" fill-opacity="0.2" stroke="#FBBF24" stroke-opacity="0.5"/>
+    <rect x="0" y="290" width="340" height="72" rx="12" fill="url(#stack-teal)" stroke="#5EEAD4" stroke-opacity="0.75" filter="url(#soft-glow)"/>
+    <text x="170" y="28" fill="#E2E8F0" font-family="system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Raw sources</text>
+    <text x="170" y="86" fill="#DBEAFE" font-family="system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Structured entities</text>
+    <text x="170" y="144" fill="#CCFBF1" font-family="system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Versioned artifacts</text>
+    <text x="170" y="202" fill="#E9D5FF" font-family="system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Approved truth</text>
+    <text x="170" y="260" fill="#FEF3C7" font-family="system-ui,sans-serif" font-size="13" font-weight="600" text-anchor="middle">Operational truth</text>
+    <text x="170" y="332" fill="#F0FDFA" font-family="system-ui,sans-serif" font-size="14" font-weight="700" text-anchor="middle">Role-specific AI access</text>
+    <g stroke="#94A3B8" stroke-opacity="0.55" stroke-width="1.5">
+      <line x1="170" y1="44" x2="170" y2="54"/>
+      <line x1="170" y1="102" x2="170" y2="112"/>
+      <line x1="170" y1="160" x2="170" y2="170"/>
+      <line x1="170" y1="218" x2="170" y2="228"/>
+      <line x1="170" y1="276" x2="170" y2="290"/>
+    </g>
+  </g>
+
+  <!-- Flow arrow: operations ? intelligence -->
+  <path d="M 620 310 L 690 310" stroke="url(#glow)" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="688,302 702,310 688,318" fill="#5EEAD4"/>
+
+  <text x="80" y="96" fill="#5EEAD4" font-family="system-ui,sans-serif" font-size="16" font-weight="600" letter-spacing="0.14em">INTERACTIVE ESSAY</text>
+  <text x="80" y="168" fill="#F4F7FB" font-family="Georgia,serif" font-size="46" font-weight="700">From Delivery</text>
+  <text x="80" y="228" fill="#F4F7FB" font-family="Georgia,serif" font-size="46" font-weight="700">Operations to</text>
+  <text x="80" y="288" fill="url(#glow)" font-family="Georgia,serif" font-size="46" font-weight="700">Delivery Intelligence</text>
+  <text x="80" y="340" fill="#91A4B7" font-family="system-ui,sans-serif" font-size="21">An AI-assisted operating system for annotation delivery</text>
+</svg>

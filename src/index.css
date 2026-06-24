@@ -80,6 +80,31 @@ button, a, [role="button"], summary { cursor: pointer; }
 @theme {
   --font-sans: "DM Sans", system-ui, sans-serif;
   --font-display: "Space Grotesk", system-ui, sans-serif;
+  --blog-headline: #111C2D;
+  --blog-text: rgba(17, 28, 45, 0.72);
+}
+
+/* Blog / article typography (Geist + navy palette) */
+.blog-writing {
+  font-family: 'Geist', 'Geist Sans', serif;
+}
+
+.blog-writing .blog-headline {
+  font-family: 'Geist', 'Geist Sans', serif;
+  color: var(--blog-headline);
+}
+
+.blog-writing .blog-text {
+  font-family: 'Geist', 'Geist Sans', serif;
+  color: var(--blog-text);
+}
+
+.dark .blog-writing .blog-headline {
+  color: hsl(var(--foreground));
+}
+
+.dark .blog-writing .blog-text {
+  color: hsl(var(--muted-foreground));
 }
 
 /* ============================================
