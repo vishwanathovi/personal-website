@@ -1,8 +1,10 @@
 import { useEffect, useMemo, type CSSProperties, type ReactNode } from 'react'
 import type { ScrollyConfig } from '../blog/types'
 import initScrolly from './scrolly-runtime'
-import scrollyCssUrl from './scrolly.css?url'
+import './scrolly.css'
 import '../fonts/geist.css'
+
+const NAV_ICON_SIZE = 14
 
 const VIZ_MOUNT_IDS: Record<string, string> = {
   timeline: 'chart-timeline',
@@ -61,16 +63,6 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
   }, [page.theme])
 
   useEffect(() => {
-    const linkId = 'scrolly-stylesheet'
-    let link = document.getElementById(linkId) as HTMLLinkElement | null
-    if (!link) {
-      link = document.createElement('link')
-      link.id = linkId
-      link.rel = 'stylesheet'
-      link.href = scrollyCssUrl
-      document.head.appendChild(link)
-    }
-
     document.body.classList.add('scrollytelling-theme', `page-${configId}`)
     const stored =
       localStorage.getItem('scrolly-theme') ?? localStorage.getItem('theme') ?? 'dark'
@@ -117,7 +109,6 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
       document.body.classList.remove('scrollytelling-theme', 'light-theme', `page-${configId}`)
       document.body.style.cssText = prev
       document.removeEventListener('click', onThemeClick)
-      document.getElementById(linkId)?.remove()
     }
   }, [configId, page.theme])
 
@@ -163,7 +154,17 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
               className="nav-home-icon"
               aria-label="Back to blog"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width={NAV_ICON_SIZE}
+                height={NAV_ICON_SIZE}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
@@ -245,7 +246,17 @@ export function ScrollyLayout({ config, configId, children }: ScrollyLayoutProps
             <div id="mobile-viz-topbar">
               <div id="mobile-tab-bar">
                 <a href={page.metadata.homeNavUrl || '/blog'} className="mob-tab mob-home-icon" aria-label="Back to blog">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width={NAV_ICON_SIZE}
+                    height={NAV_ICON_SIZE}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     <polyline points="9 22 9 12 15 12 15 22" />
                   </svg>
